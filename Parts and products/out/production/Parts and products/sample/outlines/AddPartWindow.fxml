@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.AddPartWindowController">
+  <VBox layoutX="0.0" layoutY="0.0" prefHeight="400.0" prefWidth="600.0">
+    <HBox prefHeight="66.0" prefWidth="600.0" spacing="20.0">
+      <Label prefHeight="38.0" prefWidth="99.0" text="Add Part">
+        <font>
+          <Font name="System Bold" size="20.0" />
+        </font>
+      </Label>
+      <RadioButton fx:id="inHouseRadio" mnemonicParsing="false" onAction="#inHouseSelected" text="In-House">
+        <toggleGroup>
+          <ToggleGroup fx:id="partType" />
+        </toggleGroup>
+      </RadioButton>
+      <RadioButton id="inHouseRadio" fx:id="OutsourcedRadio" mnemonicParsing="false" onAction="#OutsourcedSelected" selected="true" text="Outsourced" toggleGroup="$partType" />
+      <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+    </HBox>
+    <HBox prefHeight="100.0" prefWidth="200.0">
+      <Label prefWidth="46.0" text="ID">
+        <font>
+          <Font size="15.0" />
+        </font>
+      </Label>
+      <TextField fx:id="PartIdField" prefWidth="200.0" translateX="60.0" />
+      <padding>
+        <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" fx:id="x1" />
+      </padding>
+    </HBox>
+    <HBox padding="$x1" prefHeight="100.0" prefWidth="200.0" spacing="18.0">
+      <Label text="Name" />
+      <TextField fx:id="partNameField" prefWidth="200.0" translateX="55.0" />
+    </HBox>
+    <HBox padding="$x1" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+      <Label text="Inv" />
+      <TextField fx:id="partStockField" prefWidth="200.0" translateX="70.0" />
+    </HBox>
+    <HBox padding="$x1" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+      <Label text="Price/Cost" />
+      <TextField fx:id="partPriceField" prefWidth="200.0" translateX="35.0" />
+    </HBox>
+    <HBox padding="$x1" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+      <Label text="Max" />
+      <TextField fx:id="partMaxField" prefWidth="119.0" />
+      <Label text="Min" />
+      <TextField fx:id="partMinField" prefWidth="132.0" />
+    </HBox>
+    <HBox prefHeight="100.0" prefWidth="200.0" spacing="0.0">
+      <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      </padding>
+      <Label fx:id="partTypeLabel" text="Company Name" translateX="45.0" />
+      <TextField fx:id="partTypeField" prefWidth="200.0" translateX="70.0" />
+    </HBox>
+    <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+      <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveButtonClicked" text="Save" />
+      <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButtonClicked" text="Cancel" />
+      <padding>
+        <Insets bottom="5.0" left="300.0" right="5.0" top="5.0" />
+      </padding>
+    </HBox>
+  </VBox>
+</AnchorPane>

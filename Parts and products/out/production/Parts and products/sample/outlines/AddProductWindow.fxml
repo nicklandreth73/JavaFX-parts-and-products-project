@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="606.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.AddProductWindowController">
+  <HBox layoutX="0.0" layoutY="0.0" prefHeight="400.0" prefWidth="1000.0">
+    <children>
+      <VBox prefHeight="263.0" prefWidth="429.0">
+        <HBox prefHeight="66.0" prefWidth="600.0" spacing="20.0">
+          <Label prefHeight="38.0" prefWidth="200.0" text="Add Product">
+            <font>
+              <Font name="System Bold" size="20.0" />
+            </font>
+          </Label>
+          <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+          </padding>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+          <Label prefWidth="46.0" text="ID">
+            <font>
+              <Font size="15.0" />
+            </font>
+          </Label>
+          <TextField fx:id="PartIdField" prefWidth="200.0" translateX="10.0" />
+          <padding>
+            <Insets bottom="5.0" left="50.0" right="5.0" top="5.0" fx:id="x1" />
+          </padding>
+        </HBox>
+        <HBox padding="$x1" prefHeight="100.0" prefWidth="200.0" spacing="18.0">
+          <Label text="Name" />
+          <TextField fx:id="partNameField" prefWidth="200.0" translateX="10.0" />
+        </HBox>
+        <HBox padding="$x1" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+          <Label text="Inv" />
+          <TextField fx:id="partStockField" prefWidth="200.0" translateX="25.0" />
+        </HBox>
+        <HBox padding="$x1" prefHeight="100.0" prefWidth="200.0" spacing="0.0">
+          <Label text="Price/Cost" />
+          <TextField fx:id="partPriceField" prefWidth="200.0" translateX="10.0" />
+        </HBox>
+        <HBox padding="$x1" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+          <Label text="Max" />
+          <TextField fx:id="partMaxField" prefWidth="119.0" />
+          <Label text="Min" />
+          <TextField fx:id="partMinField" prefWidth="132.0" />
+        </HBox>
+      </VBox>
+    </children>
+  </HBox>
+  <VBox layoutX="450.0" layoutY="0.0" prefHeight="606.0" prefWidth="550.0">
+    <children>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+        <children>
+          <Separator prefWidth="132.0" visible="false" />
+          <Button fx:id="partSearchButton" mnemonicParsing="false" onAction="#partSearchAction" prefHeight="27.0" prefWidth="119.0" text="Search" />
+          <TextField fx:id="partSearch" prefWidth="200.0" translateY="5.0" />
+        </children>
+        <padding>
+          <Insets top="60.0" />
+        </padding>
+      </HBox>
+      <HBox prefHeight="185.0" prefWidth="550.0">
+        <children>
+          <TableView fx:id="PartTableFixed" prefHeight="175.0" prefWidth="536.0">
+            <columns>
+              <TableColumn prefWidth="135.0" text="Part ID" fx:id="partIDColumnFixed" />
+              <TableColumn prefWidth="135.0" text="Part Name" fx:id="partNameColumnFixed" />
+              <TableColumn prefWidth="135.0" text="Inventory Level" fx:id="partInventoryColumnFixed" />
+              <TableColumn prefWidth="135.0" text="Price per Unit" fx:id="partPriceColumnFixed" />
+            </columns>
+          </TableView>
+        </children>
+      </HBox>
+      <HBox prefHeight="47.0" prefWidth="550.0">
+        <children>
+          <Separator prefHeight="45.0" prefWidth="374.0" visible="false" />
+          <Button mnemonicParsing="false" onAction="#addButtonClicked" prefHeight="27.0" prefWidth="119.0" text="Add" />
+        </children>
+        <padding>
+          <Insets top="15.0" />
+        </padding>
+      </HBox>
+      <HBox prefHeight="153.0" prefWidth="550.0">
+        <children>
+          <TableView fx:id="PartTableFluid" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="175.0" prefWidth="536.0">
+            <columns>
+              <TableColumn prefWidth="135.0" text="Part ID" fx:id="partIDColumnFluid" />
+              <TableColumn prefWidth="135.0" text="Part Name" fx:id="partNameColumnFluid" />
+              <TableColumn prefWidth="135.0" text="Inventory Level" fx:id="partInventoryColumnFluid" />
+              <TableColumn prefWidth="135.0" text="Price per Unit" fx:id="partPriceColumnFluid" />
+            </columns>
+          </TableView>
+        </children>
+      </HBox>
+      <HBox prefHeight="47.0" prefWidth="550.0">
+        <children>
+          <Separator prefHeight="45.0" prefWidth="374.0" visible="false" />
+          <Button mnemonicParsing="false" onAction="#deletePart" prefHeight="27.0" prefWidth="119.0" text="Delete" />
+        </children>
+      </HBox>
+      <HBox prefHeight="45.0" prefWidth="550.0" spacing="10.0" visible="true">
+        <children>
+          <Separator prefWidth="233.0" visible="false" />
+          <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveButtonClicked" prefHeight="27.0" prefWidth="119.0" text="Save" visible="true" />
+          <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButtonClicked" prefHeight="27.0" prefWidth="119.0" text="Cancel" />
+        </children>
+      </HBox>
+    </children>
+  </VBox>
+</AnchorPane>
